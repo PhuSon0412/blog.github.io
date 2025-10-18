@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tags | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+    
+<header class="page-header">
+    <h1>Tags</h1>
+</header>
+
+<ul class="terms-tags">
+    <li>
+        <a href="http://localhost:1313/tags/async/">async <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/backend/">backend <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/beginners/">beginners <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/collections/">collections <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/comparison/">comparison <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/data-structures/">data-structures <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/es6/">es6 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/fundamentals/">fundamentals <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/java/">java <sup><strong><sup>5</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/javascript/">javascript <sup><strong><sup>5</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/modern/">modern <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/nodejs/">nodejs <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/oop/">oop <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/promises/">promises <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/spring-boot/">spring-boot <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+</ul>
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

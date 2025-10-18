@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring-Boot | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+     
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Spring-Boot
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Spring Boot: Framework Java phổ biến nhất
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Tìm hiểu Spring Boot — framework Java mạnh mẽ giúp xây dựng ứng dụng web và API nhanh chóng, đơn giản hóa cấu hình và tối ưu hiệu năng cho backend hiện đại.</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-17 00:00:00 +0000 UTC'>October 17, 2025</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phú Sơn</span></footer>
+  <a class="entry-link" aria-label="post link to Spring Boot: Framework Java phổ biến nhất" href="http://localhost:1313/blog/spring-boot-intro/"></a>
+</article>
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

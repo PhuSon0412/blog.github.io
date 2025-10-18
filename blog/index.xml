@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Trang Blog on Blog của Phú Sơn</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Trang Blog on Blog của Phú Sơn</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>vi</language>
+    <lastBuildDate>Sat, 18 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js: JavaScript cho Backend Development</title>
+      <link>http://localhost:1313/blog/nodejs-basics/</link>
+      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/nodejs-basics/</guid>
+      <description>Tìm hiểu Node.js và vì sao nó được dùng rộng rãi cho backend.</description>
+    </item>
+    <item>
+      <title>Spring Boot: Framework Java phổ biến nhất</title>
+      <link>http://localhost:1313/blog/spring-boot-intro/</link>
+      <pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/spring-boot-intro/</guid>
+      <description>Tìm hiểu Spring Boot — framework Java mạnh mẽ giúp xây dựng ứng dụng web và API nhanh chóng, đơn giản hóa cấu hình và tối ưu hiệu năng cho backend hiện đại.</description>
+    </item>
+    <item>
+      <title>Java vs JavaScript: Giống và khác nhau</title>
+      <link>http://localhost:1313/blog/java-vs-javascript/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-vs-javascript/</guid>
+      <description>Nhiều người nhầm lẫn giữa Java và JavaScript vì tên gọi tương tự, nhưng hai ngôn ngữ này khác nhau hoàn toàn về cú pháp, mục đích và cách hoạt động. Bài viết giúp bạn phân biệt rõ ràng và chọn ngôn ngữ phù hợp.</description>
+    </item>
+    <item>
+      <title>ES6&#43; Features: Những tính năng hiện đại của JavaScript</title>
+      <link>http://localhost:1313/blog/javascript-es6/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/javascript-es6/</guid>
+      <description>Khám phá các tính năng mới từ phiên bản ES6+ như arrow function, destructuring, spread/rest, và module — giúp mã JavaScript ngắn gọn, dễ đọc và hiện đại hơn.</description>
+    </item>
+    <item>
+      <title>Lập trình bất đồng bộ trong JavaScript: Promise và Async/Await</title>
+      <link>http://localhost:1313/blog/javascript-async/</link>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/javascript-async/</guid>
+      <description>Tìm hiểu cách xử lý bất đồng bộ trong JavaScript thông qua Promise và Async/Await — hai cơ chế mạnh mẽ giúp mã nguồn rõ ràng, dễ quản lý và tránh callback hell.</description>
+    </item>
+    <item>
+      <title>JavaScript cơ bản: Từ biến đến hàm</title>
+      <link>http://localhost:1313/blog/javascript-fundamentals/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/javascript-fundamentals/</guid>
+      <description>Bài viết giới thiệu các khái niệm nền tảng của JavaScript như biến, kiểu dữ liệu, toán tử và hàm — giúp bạn xây dựng nền tảng vững chắc trước khi bước vào các chủ đề nâng cao.</description>
+    </item>
+    <item>
+      <title>Java Collections Framework - Làm chủ cấu trúc dữ liệu</title>
+      <link>http://localhost:1313/blog/java-collections/</link>
+      <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-collections/</guid>
+      <description>Tìm hiểu hệ thống Collection trong Java bao gồm List, Set, Map và Queue — nắm vững cách sử dụng các cấu trúc dữ liệu phổ biến giúp tối ưu hiệu năng chương trình.</description>
+    </item>
+    <item>
+      <title>Lập trình hướng đối tượng (OOP) trong Java</title>
+      <link>http://localhost:1313/blog/java-oop/</link>
+      <pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-oop/</guid>
+      <description>Khám phá 4 nguyên lý cơ bản của lập trình hướng đối tượng trong Java — bao gồm đóng gói, kế thừa, đa hình và trừu tượng — cùng ví dụ minh họa dễ hiểu.</description>
+    </item>
+    <item>
+      <title>Những kiến thức cơ bản về Java cho người mới bắt đầu</title>
+      <link>http://localhost:1313/blog/java-basics/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-basics/</guid>
+      <description>Bài viết giúp người mới học lập trình Java hiểu về cú pháp cơ bản, biến, kiểu dữ liệu, vòng lặp và cách viết chương trình Java đầu tiên.</description>
+    </item>
+  </channel>
+</rss>

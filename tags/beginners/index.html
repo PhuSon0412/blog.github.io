@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beginners | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+     
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Beginners
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Những kiến thức cơ bản về Java cho người mới bắt đầu
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Bài viết giúp người mới học lập trình Java hiểu về cú pháp cơ bản, biến, kiểu dữ liệu, vòng lặp và cách viết chương trình Java đầu tiên.</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-10 00:00:00 +0000 UTC'>October 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Phú Sơn</span></footer>
+  <a class="entry-link" aria-label="post link to Những kiến thức cơ bản về Java cho người mới bắt đầu" href="http://localhost:1313/blog/java-basics/"></a>
+</article>
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

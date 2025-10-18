@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promises | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+     
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Promises
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Lập trình bất đồng bộ trong JavaScript: Promise và Async/Await
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Tìm hiểu cách xử lý bất đồng bộ trong JavaScript thông qua Promise và Async/Await — hai cơ chế mạnh mẽ giúp mã nguồn rõ ràng, dễ quản lý và tránh callback hell.</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-14 00:00:00 +0000 UTC'>October 14, 2025</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Phú Sơn</span></footer>
+  <a class="entry-link" aria-label="post link to Lập trình bất đồng bộ trong JavaScript: Promise và Async/Await" href="http://localhost:1313/blog/javascript-async/"></a>
+</article>
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

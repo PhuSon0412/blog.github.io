@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+     
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/tags/">Tags</a></div>
+  <h1>
+    Modern
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ES6&#43; Features: Những tính năng hiện đại của JavaScript
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Khám phá các tính năng mới từ phiên bản ES6&#43; như arrow function, destructuring, spread/rest, và module — giúp mã JavaScript ngắn gọn, dễ đọc và hiện đại hơn.</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-10-15 00:00:00 +0000 UTC'>October 15, 2025</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phú Sơn</span></footer>
+  <a class="entry-link" aria-label="post link to ES6&#43; Features: Những tính năng hiện đại của JavaScript" href="http://localhost:1313/blog/javascript-es6/"></a>
+</article>
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

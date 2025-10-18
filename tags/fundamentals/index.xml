@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Fundamentals on Blog của Phú Sơn</title>
+    <link>http://localhost:1313/tags/fundamentals/</link>
+    <description>Recent content in Fundamentals on Blog của Phú Sơn</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript cơ bản: Từ biến đến hàm</title>
+      <link>http://localhost:1313/blog/javascript-fundamentals/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/javascript-fundamentals/</guid>
+      <description>Bài viết giới thiệu các khái niệm nền tảng của JavaScript như biến, kiểu dữ liệu, toán tử và hàm — giúp bạn xây dựng nền tảng vững chắc trước khi bước vào các chủ đề nâng cao.</description>
+    </item>
+  </channel>
+</rss>

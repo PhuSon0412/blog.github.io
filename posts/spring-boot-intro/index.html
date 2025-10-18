@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Boot: Framework Java phổ biến nhất</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" style="text-decoration:none; color:#003366; font-weight:bold;">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main>
+    
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Spring Boot: Framework Java phổ biến nhất
+    </h1>
+    <div class="post-meta"><span title='2024-01-24 00:00:00 +0000 UTC'>January 24, 2024</span>&nbsp;·&nbsp;<span>4 min</span>&nbsp;·&nbsp;<span>Phú Sơn</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Spring Boot là framework Java mạnh mẽ nhất để xây dựng ứng dụng backend. Hãy cùng tìm hiểu cách bắt đầu với Spring Boot.</p>
+<h2 id="spring-boot-là-gì">Spring Boot là gì?<a hidden class="anchor" aria-hidden="true" href="#spring-boot-là-gì">#</a></h2>
+<p>Spring Boot là framework giúp tạo ứng dụng Spring độc lập, production-ready một cách nhanh chóng với cấu hình tối thiểu.</p>
+<h2 id="tại-sao-chọn-spring-boot">Tại sao chọn Spring Boot?<a hidden class="anchor" aria-hidden="true" href="#tại-sao-chọn-spring-boot">#</a></h2>
+<ol>
+<li><strong>Auto-configuration</strong> - Tự động cấu hình</li>
+<li><strong>Embedded server</strong> - Tomcat/Jetty tích hợp sẵn</li>
+<li><strong>Production-ready</strong> - Metrics, health checks</li>
+<li><strong>Microservices</strong> - Phù hợp cho kiến trúc microservices</li>
+<li><strong>Cộng đồng lớn</strong> - Nhiều tài liệu và support</li>
+</ol>
+<h2 id="cài-đặt-và-setup">Cài đặt và Setup<a hidden class="anchor" aria-hidden="true" href="#cài-đặt-và-setup">#</a></h2>
+<h3 id="1-tạo-project-với-spring-initializr">1. Tạo project với Spring Initializr<a hidden class="anchor" aria-hidden="true" href="#1-tạo-project-với-spring-initializr">#</a></h3>
+<p>Truy cập <a href="https://start.spring.io">start.spring.io</a> và chọn:</p>
+<ul>
+<li><strong>Project:</strong> Maven</li>
+<li><strong>Language:</strong> Java</li>
+<li><strong>Spring Boot:</strong> 3.x.x</li>
+<li><strong>Dependencies:</strong> Spring Web, Spring Data JPA, H2 Database</li>
+</ul>
+<h3 id="2-cấu-trúc-project-cơ-bản">2. Cấu trúc project cơ bản<a hidden class="anchor" aria-hidden="true" href="#2-cấu-trúc-project-cơ-bản">#</a></h3>
+<pre tabindex="0"><code>my-spring-app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/demo/
+│   │   │       ├── DemoApplication.java
+│   │   │       ├── controller/
+│   │   │       ├── service/
+│   │   │       ├── repository/
+│   │   │       └── model/
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── static/
+│   └── test/
+├── pom.xml
+└── README.md
+</code></pre><h2 id="tạo-rest-api-đơn-giản">Tạo REST API đơn giản<a hidden class="anchor" aria-hidden="true" href="#tạo-rest-api-đơn-giản">#</a></h2>
+<h3 id="1-model-entity">1. Model (Entity)<a hidden class="anchor" aria-hidden="true" href="#1-model-entity">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.model;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> jakarta.persistence.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;users&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Id</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GeneratedValue</span>(strategy <span style="color:#f92672">=</span> GenerationType.<span style="color:#a6e22e">IDENTITY</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Long id;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String email;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>() {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span>(String name, String email, <span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Getters and Setters</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Long <span style="color:#a6e22e">getId</span>() { <span style="color:#66d9ef">return</span> id; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setId</span>(Long id) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> id; }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span>(String name) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name; }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getEmail</span>() { <span style="color:#66d9ef">return</span> email; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setEmail</span>(String email) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email; }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span>() { <span style="color:#66d9ef">return</span> age; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span>(<span style="color:#66d9ef">int</span> age) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age; }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="2-repository">2. Repository<a hidden class="anchor" aria-hidden="true" href="#2-repository">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.repository;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.User;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.data.jpa.repository.JpaRepository;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Repository;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserRepository</span> <span style="color:#66d9ef">extends</span> JpaRepository {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Spring tự động implement các method cơ bản</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// findAll(), findById(), save(), delete()...</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Custom query methods</span>
+</span></span><span style="display:flex;"><span>    User <span style="color:#a6e22e">findByEmail</span>(String email);
+</span></span><span style="display:flex;"><span>    List <span style="color:#a6e22e">findByAgeGreaterThan</span>(<span style="color:#66d9ef">int</span> age);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="3-service">3. Service<a hidden class="anchor" aria-hidden="true" href="#3-service">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.User;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.repository.UserRepository;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Service;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> UserRepository userRepository;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List <span style="color:#a6e22e">getAllUsers</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userRepository.<span style="color:#a6e22e">findAll</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">getUserById</span>(Long id) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userRepository.<span style="color:#a6e22e">findById</span>(id)
+</span></span><span style="display:flex;"><span>            .<span style="color:#a6e22e">orElseThrow</span>(() <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;User không tồn tại&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">createUser</span>(User user) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userRepository.<span style="color:#a6e22e">save</span>(user);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">updateUser</span>(Long id, User userDetails) {
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> getUserById(id);
+</span></span><span style="display:flex;"><span>        user.<span style="color:#a6e22e">setName</span>(userDetails.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>        user.<span style="color:#a6e22e">setEmail</span>(userDetails.<span style="color:#a6e22e">getEmail</span>());
+</span></span><span style="display:flex;"><span>        user.<span style="color:#a6e22e">setAge</span>(userDetails.<span style="color:#a6e22e">getAge</span>());
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userRepository.<span style="color:#a6e22e">save</span>(user);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deleteUser</span>(Long id) {
+</span></span><span style="display:flex;"><span>        userRepository.<span style="color:#a6e22e">deleteById</span>(id);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="4-controller">4. Controller<a hidden class="anchor" aria-hidden="true" href="#4-controller">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.demo.controller;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.model.User;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.demo.service.UserService;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.beans.factory.annotation.Autowired;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.http.ResponseEntity;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.web.bind.annotation.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@RequestMapping</span>(<span style="color:#e6db74">&#34;/api/users&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Autowired</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> UserService userService;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// GET /api/users - Lấy tất cả users</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List <span style="color:#a6e22e">getAllUsers</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userService.<span style="color:#a6e22e">getAllUsers</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// GET /api/users/1 - Lấy user theo ID</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GetMapping</span>(<span style="color:#e6db74">&#34;/{id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity <span style="color:#a6e22e">getUserById</span>(<span style="color:#a6e22e">@PathVariable</span> Long id) {
+</span></span><span style="display:flex;"><span>        User user <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">getUserById</span>(id);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(user);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// POST /api/users - Tạo user mới</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> User <span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">@RequestBody</span> User user) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> userService.<span style="color:#a6e22e">createUser</span>(user);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// PUT /api/users/1 - Cập nhật user</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PutMapping</span>(<span style="color:#e6db74">&#34;/{id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity <span style="color:#a6e22e">updateUser</span>(
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@PathVariable</span> Long id,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@RequestBody</span> User userDetails) {
+</span></span><span style="display:flex;"><span>        User updatedUser <span style="color:#f92672">=</span> userService.<span style="color:#a6e22e">updateUser</span>(id, userDetails);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>(updatedUser);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// DELETE /api/users/1 - Xóa user</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@DeleteMapping</span>(<span style="color:#e6db74">&#34;/{id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity <span style="color:#a6e22e">deleteUser</span>(<span style="color:#a6e22e">@PathVariable</span> Long id) {
+</span></span><span style="display:flex;"><span>        userService.<span style="color:#a6e22e">deleteUser</span>(id);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity.<span style="color:#a6e22e">ok</span>().<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="5-application-properties">5. Application Properties<a hidden class="anchor" aria-hidden="true" href="#5-application-properties">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#75715e"># application.properties</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.application.name</span><span style="color:#f92672">=</span><span style="color:#e6db74">demo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># H2 Database</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.url</span><span style="color:#f92672">=</span><span style="color:#e6db74">jdbc:h2:mem:testdb</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.driverClassName</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.h2.Driver</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.username</span><span style="color:#f92672">=</span><span style="color:#e6db74">sa</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.datasource.password</span><span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># JPA</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.database-platform</span><span style="color:#f92672">=</span><span style="color:#e6db74">org.hibernate.dialect.H2Dialect</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.hibernate.ddl-auto</span><span style="color:#f92672">=</span><span style="color:#e6db74">update</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.jpa.show-sql</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># H2 Console</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.h2.console.enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">spring.h2.console.path</span><span style="color:#f92672">=</span><span style="color:#e6db74">/h2-console</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Server</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server.port</span><span style="color:#f92672">=</span><span style="color:#e6db74">8080</span>
+</span></span></code></pre></div><h2 id="chạy-ứng-dụng">Chạy ứng dụng<a hidden class="anchor" aria-hidden="true" href="#chạy-ứng-dụng">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Build và chạy</span>
+</span></span><span style="display:flex;"><span>./mvnw spring-boot:run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hoặc</span>
+</span></span><span style="display:flex;"><span>mvn clean install
+</span></span><span style="display:flex;"><span>java -jar target/demo-0.0.1-SNAPSHOT.jar
+</span></span></code></pre></div><h2 id="test-api-với-curl">Test API với curl<a hidden class="anchor" aria-hidden="true" href="#test-api-với-curl">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Tạo user</span>
+</span></span><span style="display:flex;"><span>curl -X POST http://localhost:8080/api/users <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;Nguyễn Văn A&#34;,&#34;email&#34;:&#34;a@example.com&#34;,&#34;age&#34;:25}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lấy tất cả users</span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8080/api/users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lấy user theo ID</span>
+</span></span><span style="display:flex;"><span>curl http://localhost:8080/api/users/1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cập nhật user</span>
+</span></span><span style="display:flex;"><span>curl -X PUT http://localhost:8080/api/users/1 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -d <span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;Nguyễn Văn B&#34;,&#34;email&#34;:&#34;b@example.com&#34;,&#34;age&#34;:26}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Xóa user</span>
+</span></span><span style="display:flex;"><span>curl -X DELETE http://localhost:8080/api/users/1
+</span></span></code></pre></div><h2 id="kết-luận">Kết luận<a hidden class="anchor" aria-hidden="true" href="#kết-luận">#</a></h2>
+<p>Spring Boot giúp bạn tạo REST API nhanh chóng và dễ dàng. Với kiến trúc MVC rõ ràng, code dễ maintain và mở rộng!</p>
+<pre tabindex="0"><code>
+---
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
+      <li><a href="http://localhost:1313/tags/spring-boot/">Spring-Boot</a></li>
+      <li><a href="http://localhost:1313/tags/backend/">Backend</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/nodejs-basics/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Node.js: JavaScript cho Backend Development</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+  </main>
+
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+</body>
+</html>
+
+  
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta name="generator" content="Hugo 0.151.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu | Blog của Phú Sơn</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/" class="site-title">Blog của Phú Sơn</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Giới thiệu</a></li>
+      <li><a href="/blog/">Trang Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+  <main>
+    
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="fade-in delay-1">
+      <span>HELLO,</span>
+      <span>TÔI LÀ</span>
+      <span class="highlight">PHÚ SƠN</span>
+      <span class="highlight2">CÔNG NGHỆ THÔNG TIN</span>
+    </h1>
+    
+    <p class="hero-subtitle fade-in delay-2">
+      Tôi không chỉ học lập trình, tôi học cách kết nối con người bằng công nghệ và lan tỏa năng lượng tích cực qua từng dự án.
+    </p>
+    
+    <a href="#achievements" class="btn fade-in delay-3">Khám phá thêm 👇</a>
+  </div>
+
+  
+  <div class="hero-image"></div>
+
+  
+  <div class="hero-empty"></div>
+</section>
+
+
+<section id="achievements" class="achievements fade-up">
+  <h2>🏆 Thành tích & Kinh nghiệm</h2>
+  <div class="achievements-grid">
+    <ul>
+      <li>🥇 Giải thưởng </li>
+      <li>☁️ Chứng chỉ </li>
+      <li>💼 4 năm đang học tập</li>
+      <li>📘 Programmer</li>
+      <li>🎓 Developer</li>
+      <li>🚀 Kỹ năng: Java, HTML, CSS, JavaScript, SQL, Python </li>
+    </ul>
+    <img src="/images/tt1.jpg" alt="Thành tích" class="achieve-img">
+    <img src="/images/tt2.jpg" alt="Thành tích" class="achieve-img">
+    <img src="/images/tt3.jpg" alt="Thành tích" class="achieve-img">
+  </div>
+</section>
+
+
+<section class="achievements fade-up">
+  <h2>📖 Khám phá Blog của tôi</h2>
+  <p>Chia sẻ kiến thức về lập trình Java, JavaScript và công nghệ web hiện đại</p>
+  <a href="/blog/" class="btn-blog">Xem Blog 👉</a>
+</section>
+
+
+  </main>
+
+  
+  <footer style="text-align:center; padding:20px; background:#f9f9f9; color:#555;">
+  © 2025 Blog của Phú Sơn. All rights reserved.
+</footer>
+
+
+  
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
